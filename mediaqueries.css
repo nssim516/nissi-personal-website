@@ -42,6 +42,11 @@
         width: 275px;
         height: 275px;
         margin: 0 auto 2rem;
+        z-index: 1; /* to make sure profile picture is behind the hamburger menu */
+    }
+    .hamburger-menu {
+        position: relative; /* to make z-index work */
+        z-index: 2; /* to ensure hamburger menu is above profile picture */
     }
     .about-containers {
         margin-top: 0;
