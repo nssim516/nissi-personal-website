@@ -520,10 +520,12 @@ a { /* a selects all elements on page */
 
         .contact-info-container p {
             font-size: larger;
+            margin-right: 0.5rem;
         }
 
         .contact-icon {
             cursor: default;
+            margin-left: 0.5rem;
         }
 
          /* FOOTER SECTION */
