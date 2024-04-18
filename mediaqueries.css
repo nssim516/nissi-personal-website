@@ -91,6 +91,7 @@
         flex-direction: wrap;
     }
     .contact-info-container {
+        font-size: 1rem;
         margin: 0;
     }
     .contact-info-container p, .nav-links li a {
