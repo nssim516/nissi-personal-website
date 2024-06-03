@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="mediaqueries.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <script src="script.js" defer></script> <!-- defer loads script asynchronously -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
 </head>
 <body> <!-- what gets displayed in the browser -->
     <nav id="desktop-nav">
@@ -51,7 +53,16 @@
         <div class="section__text">
             <p class="section__text__p1">Hi! I'm</p> <!-- paragraph -->
             <h1 class="title">Nissi Otoo</h1> <!-- heading 1 -->
-            <p class="section__text__p2"> Computer Engineering @ VT</p> <!-- consider type text!! -->
+            <p class="section__text__p2"> I am a <span class="auto-type"></span></p>
+            <!-- AUTO-TYPE -->
+            <script>
+                var typed = new Typed(".auto-type", {
+                    strings: ["Engineer.", " Developer.", " Leader.", " Programmer.", " Researcher."],
+                    typeSpeed: 125,
+                    backSpeed: 100,
+                    loop: true
+                })
+            </script>
              <!-- DOWNLOAD RESUME BUTTON -->
             <div class="btn-container">
                 <button 
