@@ -82,6 +82,9 @@ const darkModeToggleHamburger = document.querySelector("#dark-mode-toggle-hambur
 const sunIcon = document.querySelector(".toggle .bxs-sun");
 const moonIcon = document.querySelector(".toggle .bxs-moon");
 
+// Select all icons with the class 'icon'
+const icons = document.querySelectorAll(".icon, .project-img");
+
 // Set initial dark/light theme based on local storage
 const currentTheme = localStorage.getItem("theme");
 if (currentTheme == "dark") {
@@ -108,7 +111,7 @@ darkModeToggleHamburger.addEventListener("change", () => {
   }
 });
 
-  // Funciton to toggle the icons in the dark mode toggle
+  // Funciton to set dark mode
   function setDarkMode() {
     body.setAttribute("theme", "dark");
     localStorage.setItem("theme", "dark");
@@ -118,9 +121,10 @@ darkModeToggleHamburger.addEventListener("change", () => {
     moonIcon.classList.add("bxs-moon");
     darkModeToggle.checked = true;
     darkModeToggleHamburger.checked = true;
+    updateIconSources('dark');
   }
   
-  // Function to toggle the icons in the light mode toggle
+  // Function to set light mode
   function setLightMode() {
     body.removeAttribute("theme");
     localStorage.setItem("theme", "light");
@@ -130,4 +134,17 @@ darkModeToggleHamburger.addEventListener("change", () => {
     moonIcon.classList.add("bx-moon");
     darkModeToggle.checked = false;
     darkModeToggleHamburger.checked = false;
+    updateIconSources('light');
+  }
+
+  function updateIconSources(theme) {
+    icons.forEach(icon => {
+      const lightSrc = icon.getAttribute('src-light');
+      const darkSrc = icon.getAttribute('src-dark');
+      if (theme === 'dark') {
+        icon.src = darkSrc;
+      } else {
+        icon.src = lightSrc;
+      }
+    });
   }
