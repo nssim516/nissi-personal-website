@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nissi Otoo</title> <!-- appears in the browser's title bar -->
+   <!-- FAVICON -->
+   <link rel="icon" href="assets\no-logo.png">
    <!-- INSERTING FILES -->
-   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap" rel="stylesheet"> <!-- Poppins font -->
     <link rel="stylesheet" href="style.css"> 
     <link rel="stylesheet" href="mediaqueries.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <script src="script.js" defer></script> <!-- defer loads script asynchronously -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script> <!-- auto-type source -->
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet"> <!-- light/dark mode icons -->
+
 </head>
 <body> <!-- what gets displayed in the browser -->
     <nav id="desktop-nav">
@@ -21,6 +26,15 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <!-- DARK MODE TOGGLE -->
+                <li>
+                    <input type="checkbox" id="dark-mode-toggle" class="toggle-checkbox">
+                    <label class="toggle" for="dark-mode-toggle">
+                        <i class="bx bxs-sun"></i>
+                        <i class="bx bxs-moon"></i>
+                        <span class="ball"></span>
+                    </label>
+                </li>
             </ul>
         </div>
     </nav>
@@ -35,9 +49,18 @@
             <div class="menu-links">
                 <!-- onclick function closes hamburger when link is clicked -->
                 <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
                 <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
                 <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+                <!-- DARK MODE TOGGLE -->
+                <li>
+                    <input type="checkbox" id="dark-mode-toggle-hamburger" class="toggle-checkbox">
+                    <label class="toggle" for="dark-mode-toggle-hamburger">
+                        <i class="bx bxs-sun"></i>
+                        <i class="bx bxs-moon"></i>
+                        <span class="ball"></span>
+                    </label>
+                </li>
             </div>
         </div>
     </nav>
@@ -51,7 +74,16 @@
         <div class="section__text">
             <p class="section__text__p1">Hi! I'm</p> <!-- paragraph -->
             <h1 class="title">Nissi Otoo</h1> <!-- heading 1 -->
-            <p class="section__text__p2"> Computer Engineering @ VT</p> <!-- consider type text!! -->
+            <p class="section__text__p2"> I am <span class="auto-type"></span></p>
+            <!-- AUTO-TYPE -->
+            <script>
+                var typed = new Typed(".auto-type", {
+                    strings: ["an Engineer.", "a Developer.", "a Leader.", "a Programmer.", "a Researcher."],
+                    typeSpeed: 110,
+                    backSpeed: 100,
+                    loop: true
+                })
+            </script>
              <!-- DOWNLOAD RESUME BUTTON -->
             <div class="btn-container">
                 <button 
@@ -67,26 +99,34 @@
                 <!-- inserting image, naming it, sending user to link on click -->
                 <img 
                 src="./assets/linkedin.png" 
+                src-light="./assets/linkedin.png"
+                src-dark="./assets/linkedin-dark.png"
                 alt="My LinkedIn profile" 
-                class="icon" 
+                class="icon Linkedin-icon"
                 onclick="location.href='https://www.linkedin.com/in/nissi-otoo'"
                 />
                 <img 
                 src="./assets/github.png" 
+                src-light="./assets/github.png"
+                src-dark="./assets/github-dark.png"
                 alt="My Github profile" 
-                class="icon" 
+                class="icon Github-icon" 
                 onclick="location.href='https://github.com/nssim516'"
                 />
                 <img 
                 src="./assets/email.png" 
+                src-light="./assets/email.png"
+                src-dark="./assets/email-dark.png"
                 alt="My Email" 
-                class="icon" 
+                class="icon Email-icon" 
                 onclick="location.href='mailto: nssim516@gmail.com'"
                 />
                 <img 
                 src="./assets/instagram.png" 
+                src-light="./assets/instagram.png"
+                src-dark="./assets/instagram-dark.png"
                 alt="My Instagram profile" 
-                class="icon" 
+                class="icon Instagram-icon" 
                 onclick="location.href='https://www.instagram.com/nissi.otoo/'"
                 />
             </div>
@@ -118,6 +158,8 @@
                     <div class="about-containers">
                         <div class="details-container">
                             <img src="./assets/experience.png" 
+                            src-light="./assets/experience.png"
+                            src-dark="./assets/experience-dark.png"
                             alt="Experience icon" 
                             class="icon"/>
                             <h3>Experience</h3>
@@ -127,18 +169,22 @@
                                 <br>> September 2023 - March 2024</p>
                         </div>
                         <div class="details-container">
-                           <img src="./assets/education.png" 
-                           alt="Education icon" 
-                           class="icon"/>
+                            <img src="./assets/education.png" 
+                            src-light="./assets/education.png"
+                            src-dark="./assets/education-dark.png"
+                            alt="Education icon" 
+                            class="icon"/>
                            <h3>Education</h3>
                            <p>Virginia Tech B.S. Computer Engineering
                             <br>> August 2023 - May 2027
-                            <br>> GPA: 3.1</p>
+                            <br>> GPA: 3.3</p>
                         </div>
                     </div>
                     <!-- ABOUT ME BLURB -->
                     <div class="text-container">
-                        <p>First-year student at Virginia Tech studying Computer Engineering with a focus on machine learning. Outside the classroom, my main goal in every community I step into is to make a meaningful contribution, whether through music, volunteering, or research. I'm driven by a desire to develop technologies that increase awareness and accessibility in the lives of others.
+                        <p>I'm a second-year Computer Engineering student at Virginia Tech with a focus on machine learning and an intended minor in Human-Computer Interaction. I am originally from Accra, Ghana and currently live in Northern Virginia, but my roots are proudly Ghanaian. 
+                            <br> 
+                            <br>Outside the classroom, my main goal in every community I step into is to make a meaningful contribution, whether through music, volunteering, or research. I'm driven by a desire to develop technologies that increase awareness and accessibility in the lives of others. Here is a portfolio detailing my professional journey!
                         </p>
                     </div>
                 </div>
@@ -157,9 +203,10 @@
                         <!-- HTML SKILL -->
                         <article>
                             <img src="./assets/html.png" 
+                            src-light="./assets/html.png"
+                            src-dark="./assets/html.png"
                             alt="HTML icon"
-                            class="icon"
-                            />
+                            class="icon"/>
                             <div>
                                 <h3>HTML</h3>
                                 <p>Proficient</p>
@@ -168,9 +215,10 @@
                         <!-- CSS SKILL -->
                         <article>
                             <img src="./assets/css.png" 
+                            src-light="./assets/css.png"
+                            src-dark="./assets/css.png"
                             alt="CSS icon"
-                            class="icon"
-                            />
+                            class="icon"/>
                             <div>
                                 <h3>CSS</h3>
                                 <p>Proficient</p>
@@ -179,9 +227,10 @@
                         <!-- JAVASCRIPT SKILL -->
                         <article>
                             <img src="./assets/javascript.png" 
+                            src-light="./assets/javascript.png"
+                            src-dark="./assets/javascript.png"
                             alt="JavaScript icon"
-                            class="icon"
-                            />
+                            class="icon"/>
                             <div>
                                 <h3>JavaScript</h3>
                                 <p>Basic</p>
@@ -190,9 +239,10 @@
                         <!-- C++ SKILL -->
                         <article>
                             <img src="./assets/c++.png" 
+                            src-light="./assets/c++.png"
+                            src-dark="./assets/c++.png"
                             alt="C++ icon"
-                            class="icon"
-                            />
+                            class="icon"/>
                             <div>
                                 <h3>C++</h3>
                                 <p>Basic</p>
@@ -201,9 +251,10 @@
                         <!-- PYTHON SKILL -->
                         <article>
                             <img src="./assets/python.png" 
+                            src-light="./assets/python.png"
+                            src-dark="./assets/python.png"
                             alt="Python icon"
-                            class="icon"
-                            />
+                            class="icon"/>
                             <div>
                                 <h3>Python</h3>
                                 <p>Proficient</p>
@@ -212,9 +263,10 @@
                         <!-- MATLAB SKILL -->
                         <article>
                             <img src="./assets/matlab.png" 
+                            src-light="./assets/matlab.png"
+                            src-dark="./assets/matlab.png"
                             alt="Matlab icon"
-                            class="icon"
-                            />
+                            class="icon"/>
                             <div>
                                 <h3>Matlab</h3>
                                 <p>Proficient</p>
@@ -223,6 +275,8 @@
                         <!-- LaTeX SKILL -->
                         <article>
                             <img src="./assets/latex.png" 
+                            src-light="./assets/latex.png" 
+                            src-dark="./assets/latex-dark.png" 
                             alt="LaTeX icon"
                             class="icon"
                             />
@@ -240,9 +294,10 @@
                         <!-- VISUAL STUDIO -->
                         <article>
                             <img src="./assets/vs-code.png" 
-                            alt="JavaScript icon"
-                            class="icon"
-                            />
+                            src-light="./assets/vs-code.png"
+                            src-dark="./assets/vs-code.png"
+                            alt="Visual Studio Code icon"
+                            class="icon"/>
                             <div>
                                 <h3>Visual Studio Code</h3>
                                 <p>Advanced</p>
@@ -251,9 +306,10 @@
                         <!-- ARDUINO -->
                         <article>
                             <img src="./assets/arduino.png" 
-                            alt="CSS icon"
-                            class="icon"
-                            />
+                            src-light="./assets/arduino.png"
+                            src-dark="./assets/arduino.png"
+                            alt="Arduino icon"
+                            class="icon"/>
                             <div>
                                 <h3>Arduino</h3>
                                 <p>Proficient</p>
@@ -262,9 +318,10 @@
                         <!-- AD3 -->
                         <article>
                             <img src="./assets/analog-discovery.png" 
-                            alt="HTML icon"
-                            class="icon"
-                            />
+                            src-light="./assets/analog-discovery.png"
+                            src-dark="./assets/analog-discovery.png"
+                            alt="AD3 icon"
+                            class="icon"/>
                             <div>
                                 <h3>Analog Discovery</h3>
                                 <p>Advanced</p>
@@ -273,12 +330,26 @@
                         <!-- SOLIDWORKS -->
                         <article>
                             <img src="./assets/solidworks.png" 
-                            alt="C++ icon"
-                            class="icon"
-                            />
+                            src-light="./assets/solidworks.png"
+                            src-dark="./assets/solidworks.png"
+                            alt="SolidWorks icon"
+                            class="icon"/>
                             <div>
                                 <h3>SolidWorks</h3>
                                 <p>Advanced</p>
+                            </div>
+                        </article>
+                        <!-- UNITY -->
+                        <article>
+                            <img src="./assets/unity.png" 
+                            src-light="./assets/unity.png"
+                            src-dark="./assets/unity-dark.png"
+                            alt="Unity icon"
+                            class="icon"
+                            />
+                            <div>
+                                <h3>Unity</h3>
+                                <p>Basic</p>
                             </div>
                         </article>
                     </div>
@@ -296,6 +367,8 @@
             <div class="details-container color-container">
                 <div class="article-container">
                     <img src="./assets/distracted-driving.png" 
+                    src-light="./assets/distracted-driving.png" 
+                    src-dark="./assets/distracted-driving.png" 
                     alt="Distracted Driving Project" 
                     class="project-img"
                     />
@@ -305,7 +378,7 @@
             <div class="btn-container">
                 <button 
                 class="btn btn-color-2 project-btn" 
-                onclick="window.open('./assets/DistractedDrivingVT.pdf')">
+                onclick="location.href='https://github.com/nssim516/distracted-driving-visualization'">
                     View
                 </button>
             </div>
@@ -314,6 +387,8 @@
             <div class="details-container color-container">
                 <div class="article-container">
                     <img src="./assets/hangman.png" 
+                    src-light="./assets/hangman.png" 
+                    src-dark="./assets/hangman-dark.png" 
                     alt="Hangman Project" 
                     class="project-img"
                     />
@@ -332,6 +407,8 @@
             <div class="details-container color-container">
                 <div class="article-container">
                     <img src="./assets/hair-bias.png" 
+                    src-light="./assets/hair-bias.png" 
+                    src-dark="./assets/hair-bias.png" 
                     alt="Hair Bias Project" 
                     class="project-img"
                     />
@@ -356,23 +433,35 @@
         <h1 class="title">Contact Me</h1>
         <div class="contact-info-upper-container">
             <div class="contact-info-container">
-                <img src="./assets/email.png" 
-                alt="Email icon" 
-                class="icon contact-icon email-icon"
+                <img 
+                src="./assets/email.png" 
+                src-light="./assets/email.png"
+                src-dark="./assets/email-dark.png"
+                alt="My Email" 
+                class="icon Email-icon" 
+                onclick="location.href='mailto: nssim516@gmail.com'"
                 />
                 <p><a href="mailto:nssim516@gmail.com">Email</a></p>
             </div>
             <div class="contact-info-container">
-                <img src="./assets/linkedin.png" 
-                alt="LinkedIn icon" 
-                class="icon contact-icon"
+                <img 
+                src="./assets/linkedin.png" 
+                src-light="./assets/linkedin.png"
+                src-dark="./assets/linkedin-dark.png"
+                alt="My LinkedIn profile" 
+                class="icon Linkedin-icon"
+                onclick="location.href='https://www.linkedin.com/in/nissi-otoo'"
                 />
                 <p><a href="https://www.linkedin.com/in/nissi-otoo/">LinkedIn</a></p>
             </div>
             <div class="contact-info-container">
-                <img src="./assets/instagram.png" 
-                alt="Instagram icon" 
-                class="icon contact-icon"
+                <img 
+                src="./assets/instagram.png" 
+                src-light="./assets/instagram.png"
+                src-dark="./assets/instagram-dark.png"
+                alt="My Instagram profile" 
+                class="icon Instagram-icon" 
+                onclick="location.href='https://www.instagram.com/nissi.otoo/'"
                 />
                 <p><a href="https://www.instagram.com/nissi.otoo/">Instagram</a></p>
             </div>
